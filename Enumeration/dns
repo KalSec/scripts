@@ -1,0 +1,15 @@
+#!/bin/bash
+
+color='\033[1;31m'
+nc='\033[0m'
+domain=$1
+echo -e "\n${color}NameServers of the ${domain}.${nc}\n"
+host -t ns $domain
+echo -e "\n${color}MailServers along with ip address of the Domain.${nc}\n"
+host $domain
+echo -e "\n${color}Running dnsrecon on the Domain.${nc}\n"
+dnsrecon -d $domain -t axfr
+echo -e "\n${color}Running dnsenum on the Domain.${nc}\n"
+dnsenum $domain
+echo -e "\n${color}DNS enumeration on the ${domain} was completed successfully.${nc}\n"
+
