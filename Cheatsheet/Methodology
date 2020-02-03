@@ -1,0 +1,42 @@
+Information Gathering
+
+1. Google Dorks
+2. Whois
+3. virustotal
+4. dnsdumpster
+5. The Harvestor
+
+Reconnaisance
+
+1. NMAP
+
+Enumeration
+
+1. SSH Enumeration:-
+
+I: searchsploit the version and find details of exploits in cvedetails.
+II: search for exploits in github and exploitdb.
+
+2. HTTP Enumeration:-
+
+I: use wappalyser to know the technologies being used.
+II: run dirbuster and nikto to find the directories and interesting files.
+
+3. SMB Enumeration:-
+
+[global]
+
+client use spnego = no
+client ntlmv2 auth = no
+
+add the above lines in smb.conf file, if enum4linux is giving issues. 
+
+I: enum4linux 
+II: use auxilliary smb modules like smb_version in msfconsole and use searchsploit.
+
+4. DNS Enumeration
+
+I: Use host to find ip address, ns and mx records of domain
+II: dnsenum
+III: dnsrecon
+
