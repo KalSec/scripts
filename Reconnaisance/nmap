@@ -4,7 +4,11 @@ color='\033[1;31m'
 nc='\033[0m'
 ip=$1
 loc="./"
-if [ "$2" != "" ]
+
+if [ "$1" == "" ]
+then 
+echo -e "Usage: ./nmap ip [path] \nExample: ./nmap 192.168.43.2 /tmp/"
+elif [ "$2" != "" ]
 then 
 loc=$2 
 fi
