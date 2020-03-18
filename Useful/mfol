@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$1" == "" ]
+then 
+echo -e "Usage: ./mfol {file} \nExample: ./mfol filename.txt"
+else
+while IFS= read -r line; do mkdir "$line"; done < $1
+fi
