@@ -1,8 +1,11 @@
 #!/bin/bash
 
+loc="/tmp/"
 if [ "$1" == "" ]
 then 
 echo -e "Usage: ./pingsweep [network] \nExample: ./pingsweep 192.168.1"
 else
-for ip in `seq 1 254`; do ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | sed 's/.$//' & done
+for ip in `seq 1 254`; do ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | sed 's/.$//' >> $loc.$1.txt & done
+sort -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n $loc.$1.txt >> $1.txt
+rm $loc.$1.txt
 fi
